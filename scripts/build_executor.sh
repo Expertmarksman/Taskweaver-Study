@@ -4,7 +4,7 @@
 scriptDirectory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "The script directory is: $scriptDirectory"
 
-version="0.1"
+version="0.2"
 imageName="taskweavercontainers/taskweaver-executor"
 imageFullName="$imageName:$version"
 
@@ -22,14 +22,7 @@ else
 fi
 
 # Build the Docker image
-<<<<<<< HEAD:scripts/build_executor.sh
 docker build -t "$imageFullName" -f "$dockerfilePath" "$contextPath"
 
 # Tag the image
 docker tag "$imageFullName" "$imageName:latest"
-=======
-docker build -t "$imageName" -f "$dockerfilePath" "$contextPath"
-
-# Tag the image
-docker tag "$imageName" taskweavercontainers/taskweaver-executor:latest
->>>>>>> 99f1803e9fa8d55c5c739b42baf35a2021d92db1:scripts/build.sh
